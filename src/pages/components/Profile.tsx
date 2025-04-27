@@ -404,7 +404,7 @@ const Profile = () => {
             <Button
               variant="outline"
               onClick={() => setIsDeleteDialogOpen(false)}
-              className="border-gray-600 text-gray-300 hover:text-gray-100 hover:bg-gray-700"
+              className="bg-gray text-gray-300 hover:text-gray-100 hover:bg-grey-600"
             >
               Cancel
             </Button>
@@ -440,7 +440,7 @@ const Profile = () => {
                 
                 <div className="flex gap-2 mt-4">
                   <Button size="sm" className="bg-blue-600 hover:bg-blue-700">Like</Button>
-                  <Button size="sm" variant="outline" className="border-gray-600 text-gray-300">
+                  <Button size="sm" variant="outline" className="bg-gray border-gray-600 text-gray-300">
                     Comment
                   </Button>
                 </div>

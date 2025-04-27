@@ -90,7 +90,7 @@ export function Sidebar({ className }: SidebarProps) {
   ];
 
   return (
-    <div className={cn('p-4', className)}>
+    <div className={cn('p-4 sticky top-0 h-screen overflow-y-auto', className)}>
       {loading ? (
         <div className="flex justify-center py-8">
           <motion.div 
@@ -260,8 +260,6 @@ export function Sidebar({ className }: SidebarProps) {
             ))}
           </div>
         </div>
-
-      
       </div>
     </div>
   );
