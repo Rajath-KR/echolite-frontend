@@ -34,10 +34,6 @@ const SavedPage = () => {
     setIsPostDialogOpen(true);
   };
 
-  const closeDialog = () => {
-    setIsPostDialogOpen(false);
-  };
-
   const removeFromSaved = (postId: number) => {
     const updatedSavedPosts = savedPosts.filter(post => post.id !== postId);
     setSavedPosts(updatedSavedPosts);

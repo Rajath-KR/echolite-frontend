@@ -45,9 +45,6 @@ const UserProfile = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [imageVersion, setImageVersion] = useState<number>(0);
-  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
-  const [isPostDialogOpen, setIsPostDialogOpen] = useState<boolean>(false);
 
   const currentUserId = 'mock_user_id'; 
 
@@ -135,12 +132,7 @@ const UserProfile = () => {
   }, [errorMessage, successMessage]);
 
   const getImageUrl = (imagePath: string) => {
-    return `http://localhost:8443/Images/${imagePath}?v=${imageVersion}`;
-  };
-
-  const openPostDialog = (post: Post) => {
-    setSelectedPost(post);
-    setIsPostDialogOpen(true);
+    return `http://localhost:8443/Images/${imagePath}`;
   };
 
   const containerVariants = {
@@ -286,7 +278,6 @@ const UserProfile = () => {
                             key={item._id}
                             whileHover={{ scale: 1.03 }}
                             className="relative overflow-hidden rounded-lg group cursor-pointer"
-                            onClick={() => openPostDialog(item)}
                           >
                             <img
                               src={`http://localhost:8443/Images/${item.postImg}`}

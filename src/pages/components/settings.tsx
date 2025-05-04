@@ -24,7 +24,6 @@ interface ProfileDetailsType {
 }
 
 const Settings = () => {
-  const [activeTab, setActiveTab] = useState("account");
   const [profileData, setProfileData] = useState<ProfileDetailsType | null>(null);
   const [loading, setLoading] = useState(true);
   const [notificationSettings, setNotificationSettings] = useState({
@@ -99,7 +98,7 @@ const Settings = () => {
         <h1 className="text-2xl font-bold text-gray-100">Settings</h1>
       </div>
 
-      <Tabs defaultValue="account" className="w-full" onValueChange={setActiveTab}>
+      <Tabs defaultValue="account" className="w-full">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-64">
             <TabsList className="flex flex-col h-auto bg-card p-2 space-y-1">

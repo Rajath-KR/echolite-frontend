@@ -133,11 +133,13 @@ const Friends = () => {
     }, 1000);
   }, []);
 
+  // Filter friends based on search query
   const filteredFriends = friends.filter(friend => 
     friend.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     friend.username.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Filter suggestions based on search query
   const filteredSuggestions = suggestions.filter(suggestion => 
     suggestion.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     suggestion.username.toLowerCase().includes(searchQuery.toLowerCase())
@@ -216,7 +218,7 @@ const Friends = () => {
         </div>
       </div>
 
-      <Tabs defaultValue="friends" className="w-full" onValueChange={setActiveTab}>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid grid-cols-3 mb-6 bg-card">
           <TabsTrigger value="friends" className="data-[state=active]:bg-[#283848]">
             Friends ({friends.length})

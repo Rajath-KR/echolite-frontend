@@ -22,7 +22,7 @@ const ExplorePage = () => {
   const [isPostDialogOpen, setIsPostDialogOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('all');  // This state is still used to highlight the active filter tab
 
   const categories = [
     { id: 'all', label: 'All', icon: <Compass className="w-4 h-4 mr-1" /> },
@@ -130,7 +130,7 @@ const ExplorePage = () => {
             <TabsTrigger
               key={category.id}
               value={category.id}
-              className="data-[state=active]:bg-[#383848] data-[state=active]:text-gray-100"
+              className={`data-[state=active]:bg-[#383848] data-[state=active]:text-gray-100 ${category.id === activeFilter ? 'bg-[#383848] text-gray-100' : ''}`}
             >
               <div className="flex items-center">
                 {category.icon}
